@@ -6,10 +6,10 @@
 
 template<class S, class T>
 class Graphe{
+public:
 	PElement<Sommet<T>>* _lSommets;
 	PElement<Arete<S, T>>* _lArete;
 	int _prochaineClef;
-public:
 	Graphe() :_prochaineClef(0), _lSommets(NULL), _lArete(NULL) {}
 	virtual ~Graphe(){ PElement<Arete<S, T>>::efface2(_lArete); PElement<Sommet<T>>::efface2(_lSommets); } 
 	
