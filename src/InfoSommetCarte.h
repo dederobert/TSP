@@ -6,7 +6,10 @@ class InfoSommetCarte {
 public:
 	string _nom;
 	Vector2D _position;
-
+/**
+	* information about the vertex
+	* with the name and the position
+	*/
 	InfoSommetCarte(const string& nom, const Vector2D& position) :_nom(nom), _position(position) {}
 	operator string() const;
 };
