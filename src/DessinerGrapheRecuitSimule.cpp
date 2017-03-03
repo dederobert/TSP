@@ -2,6 +2,13 @@
 #include "DessinGraphe.h"
 #include "DessinerGrapheRecuitSimule.h"
 
+/**
+	* Write a vertex <br />
+	* @param of ofstream text output
+	* @param graphe contain info of edges and vertex
+	* @param rayonSommet
+	* @param couleur color of the vertex
+	*/
 void DessinerGrapheRecuitSimule::ecritSommet(ofstream& of, const Graphe<InfoAreteCarte, InfoSommetCarte>& graphe, const double & rayonSommet, const string& couleur) {
 	PElement<Sommet<InfoSommetCarte>>* l;
 	for (l = graphe._lSommets; l; l = l->_s){
@@ -12,6 +19,12 @@ void DessinerGrapheRecuitSimule::ecritSommet(ofstream& of, const Graphe<InfoAret
 	}
 }
 
+/**
+	* Write an edge <br />
+	* @param of ofstream text output
+	* @param graphe contain info of edges and vertex
+	* @param couleur color of the vertex
+	*/
 void DessinerGrapheRecuitSimule::ecritAretes(ofstream& of, const Graphe<InfoAreteCarte, InfoSommetCarte>& graphe, const string& couleur) {
 	PElement<Arete<InfoAreteCarte, InfoSommetCarte>> * l;
 
@@ -24,6 +37,19 @@ void DessinerGrapheRecuitSimule::ecritAretes(ofstream& of, const Graphe<InfoAret
 	}
 }
 
+/**
+	* Write all the graph <br />
+	* @param of ofstream text output
+	* @param graphe contain info of edges and vertex
+	* @param coinHD
+	* @param coinBG
+	* @param couleurRepere
+	* @param rayonSommet 
+	* @param couleurSommets color of vertex
+	* @param couleurAretes colors of edge
+	* @param couleur color of the vertex
+	*/
+
 void DessinerGrapheRecuitSimule::ecritGraphe(ofstream& of,
 	Graphe<InfoAreteCarte, InfoSommetCarte>& graphe,
 	const Vector2D& coinHD, const Vector2D& coinBG,
@@ -32,9 +58,9 @@ void DessinerGrapheRecuitSimule::ecritGraphe(ofstream& of,
 	
 	string resume;
 
-	resume = "carte routière";
+	resume = "carte routiÃ¨re";
 
-	DessinGraphe::ecrireEntete(of, "carte routière", "carte routière simplifiée représentée par un graphe", resume, coinBG, coinHD);
+	DessinGraphe::ecrireEntete(of, "carte routiÃ¨re", "carte routiÃ¨re simplifiÃ©e reprÃ©sentÃ©e par un graphe", resume, coinBG, coinHD);
 
 	DessinGraphe::ecritNombrePointsRemarquables(of, 3 + graphe.nombreSommets());
 	DessinGraphe::ecritRepere(of, couleurRepere);
