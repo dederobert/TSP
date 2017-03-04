@@ -61,7 +61,7 @@ public:
 				oss << *(p->_v);
 				oss << separateur;
 			}
-			oss << (p->_v);
+			oss << *(p->_v);
 		}
 		oss << fin;
 		return oss.str();

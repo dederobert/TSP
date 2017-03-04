@@ -53,7 +53,7 @@ public:
 	* @param s1 The edge-to-compare vertex
 	* @param s2 The edge-to-compare vertex
 	*/
-	bool estEgal(const Sommet<T> *s1, const Sommet<T> * s2) const { return ((_debut == s1 && _fin == s2) || (_debut == s2 && _fin == s1)); }
+	bool estEgal(const Sommet<T> *s1, const Sommet<T> * s2) const { return ((_debut == s1 && _fin == s2)); }
 };
 /**
 * Use to print a edge

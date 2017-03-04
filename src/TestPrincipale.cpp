@@ -22,61 +22,60 @@ Graphe<InfoAreteCarte, InfoSommetCarte>* changement(Graphe<InfoAreteCarte, InfoS
 	Sommet<InfoSommetCarte> *A, *B, *C = NULL, *D = NULL;
 	int i = 0;
 	do{
-		PElement<Sommet<InfoSommetCarte>>* l = g->_lSommets;
-		for (int iA = rand() % g->nombreSommets(); iA >= 0; iA--) {
-			A = l->_v;
-			l = l->_s;
-		}
-		l = g->_lSommets;
-		for (int iB = rand() % g->nombreSommets(); iB >= 0; iB--) {
-			B = l->_v;
-			l = l->_s;
-		}
-		if (++i > (2 * g->nombreAretes())) throw Erreur("Failed to get A and B vertex");
-	} while (g->getAreteParSommets(A, B) || A == B);
-	
-	i = 0;
-	do {
-		if ((rand() % 2)) {
-			C = g->adjacences(A)->_v->first;
-			D = g->adjacences(B)->_v->first;
-		}else{
-			if (g->adjacences(A)->_s) C = g->adjacences(A)->_s->_v->first; else C = g->adjacences(A)->_v->first;
-			if (g->adjacences(B)->_s) D = g->adjacences(B)->_s->_v->first; else D = g->adjacences(B)->_v->first;
-		}
+		// Choix aléatoire de A et B
+		int j = 0;
+		do{
+			PElement<Sommet<InfoSommetCarte>>* l = g->_lSommets;
+			for (int iA = rand() % g->nombreSommets(); iA >= 0; iA--) {
+				A = l->_v;
+				l = l->_s;
+			}
+			l = g->_lSommets;
+			for (int iB = rand() % g->nombreSommets(); iB >= 0; iB--) {
+				B = l->_v;
+				l = l->_s;
+			}
+			if (++j > (10 * g->nombreAretes())) throw Erreur("Failed to get A and B vertex");
+		} while (g->getAreteParSommets(A, B) || g->getAreteParSommets(B, A) || A == B);
 		
-		if (++i > (2 * g->nombreAretes())) throw Erreur("Failed to change the circuit");
-	} while (C==D);
+		C = g->successeur(A)->_v;
+		D = g->successeur(B)->_v;
+
+		if (++i > (10 * g->nombreAretes())) throw Erreur("Failed to get C and D vertex");
+	} while (C == D);
+
+	cout << "A " << *A << " B " << *B << " C " << *C << " D " << *D;
 
 	// Permuttation
 	Arete<InfoAreteCarte, InfoSommetCarte> *AR1, *AR2;
 	AR1 = g->getAreteParSommets(A, C);
 	AR2 = g->getAreteParSommets(B, D);
-	
-	//g->check();
-	
-	if (AR1->_debut == A && AR2->_debut == B) {
-		AR1->_fin = B;
-		AR2->_debut = C;
-	}else if (AR1->_debut == C && AR2->_debut == B) {
-		AR1->_debut = D;
-		AR2->_fin = C;
-	}else if (AR1->_debut == C && AR2->_debut == D) {
-		AR1->_debut = B;
-		AR2->_fin = C;
-	}else {
-		AR1->_fin = D;
-		AR2->_debut = C;
+
+	//cout << "AC " << *AR1 << endl;
+	//cout << "BD " << *AR2 << endl;
+
+	AR1->_fin = B;
+
+	Sommet<InfoSommetCarte>* s0;
+
+	PElement<Arete<InfoAreteCarte, InfoSommetCarte>>* l, *ls; 
+	l = ls = g->cheminFromTo(C, B);
+	//cout << "chemin avant " << PElement<Arete<InfoAreteCarte,InfoSommetCarte>>::toString(ls) << endl;
+	for (; l; l = l->_s) {
+		//cout << "arete " << *l->_v << endl;
+		s0 = l->_v->_debut;
+		l->_v->_debut = l->_v->_fin;
+		l->_v->_fin = s0;
 	}
-	/*
-	if (AR1->_fin == C) AR1->_fin = B; else AR1->_debut = B;
-	g->check();
-	if (AR2->_debut == B) AR2->_debut = C; else AR2->_fin = C;
-	g->check();*/
-
-	
-
-	cout << "A " << *A << " B " << *B << " C " << *C << " D " << *D << endl;
+	/*cout << "chemin apres " << PElement<Arete<InfoAreteCarte, InfoSommetCarte>>::toString(ls) << endl;
+	ofstream fichier3("../../bsplines/tmp.txt", ios::out | ios::trunc);
+	if (fichier3){
+		DessinerGrapheRecuitSimule::ecritGraphe(fichier3, *g, Vector2D(0, 5),
+			Vector2D(5, 0), "black", 5, "black", "black");
+		fichier3.close();
+	}
+	system("PAUSE");*/
+	AR2->_debut = C;
 	return g;
 }
 double succ(const double &d) {
@@ -153,6 +152,7 @@ int main() {
 			tFinal, nbTentative, nbSucces, solutionInit, fCout, changement, succ);
 	}catch(Erreur e) {
 		cerr << e.trace();
+		solutionInit->check();
 		system("PAUSE");
 		return e.getCode();
 	}
