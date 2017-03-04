@@ -9,7 +9,7 @@
 #include "Vector2D.h"
 
 using namespace std;
-int main() {
+int main_test() {
 	Sommet<InfoSommetCarte>* s0;
 	Sommet<InfoSommetCarte>* s1;
 	Sommet<InfoSommetCarte>* s2;
@@ -47,9 +47,10 @@ int main() {
 
 	ofstream fichier("test.txt", ios::out | ios::trunc);
 	if (fichier){
-	 	DessinerGrapheRecuitSimule::ecritGraphe(fichier,*G, Vector2D(0,5), Vector2D(5,0), "noir", 10, "rouge", "noir");
+	 	DessinerGrapheRecuitSimule::ecritGraphe(fichier,*G, Vector2D(0,5), Vector2D(5,0), "black", 10, "red", "black");
 		fichier.close();
 	}else
 		cerr << "Impossible d'ouvrir le fichier " << endl;
 	system("PAUSE");
+	return 0;
 }

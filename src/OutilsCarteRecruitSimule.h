@@ -23,4 +23,6 @@ public:
 	static Arete<InfoAreteCarte, InfoSommetCarte>* creerArete(Sommet<InfoSommetCarte>* sA,
 		Sommet<InfoSommetCarte>* sB,
 		Graphe<InfoAreteCarte, InfoSommetCarte>& graphe);
+
+	static Graphe<InfoAreteCarte,InfoSommetCarte> circuitEulerAlea(const Graphe<InfoAreteCarte, InfoSommetCarte> &g); 
 };

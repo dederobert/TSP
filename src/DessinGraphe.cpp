@@ -35,9 +35,9 @@ void DessinGraphe::ecritNombrePointsRemarquables(ofstream& of, int nombrePoints)
 	* @param couleur color of the graph
 	*/
 void DessinGraphe::ecritRepere(ofstream& of, const string& couleur) {
-	of << "point remarquable = 2 black (0,0) O" << endl;
-	of << "point remarquable = 2 black (1,0) 1" << endl;
-	of << "point remarquable = 2 black (0,1) 1" << endl;
+	of << "point remarquable = 2 " << couleur <<" (0,0) O" << endl;
+	of << "point remarquable = 2 " << couleur <<" (1,0) 1" << endl;
+	of << "point remarquable = 2 " << couleur <<" (0,1) 1" << endl;
 }
 
 /**
