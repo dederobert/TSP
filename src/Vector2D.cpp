@@ -5,7 +5,6 @@ inline const Vector2D operator *(const double & a, const Vector2D & u) { return 
 
 //------------ implémentation des fonctions inline ----------------------
 
-inline Vector2D::Vector2D(const double & x, const double & y) : x(x), y(y){}
 
 inline const Vector2D Vector2D::operator + (const Vector2D & u) const
 {

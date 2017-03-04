@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-template <classT>
+template <class T>
 inline const T operator - (const T & u, const T & v)
 {
 	return u + -v;
@@ -13,7 +13,7 @@ class Vector2D
 public:
 	double x, y;
 
-	inline explicit Vector2D(const double & x = 0, const double & y = 0);
+	Vector2D(const double & x = 0, const double & y = 0):x(x),y(y){}
 
 	/**
 	* DONNEES : s respectant le format "(  nombre réel, nombre réel)"

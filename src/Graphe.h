@@ -28,11 +28,11 @@ public:
 	}
 	
 	int nombreSommets() const {
-		return _lSommets->taille();
+		return PElement<Sommet<T>>::taille(_lSommets);
 	}
 
 	int nombreAretes() const {
-		return _Arete->taille();
+		return PElement<Arete<S,T>>::taille(_lArete);
 	}
 
 	Arete<S, T>* getAreteParSommets(const Sommet<T>* s1, const Sommet<T>* s2) const {

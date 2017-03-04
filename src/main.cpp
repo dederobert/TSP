@@ -11,6 +11,6 @@
 const int S1 = 6;
 const int A1 = (S1*(S1 - 1) / 2);
 
-int main(int argc, char** argv) {
-	
+int main_old(int argc, char** argv) {
+	return 0;
 }
