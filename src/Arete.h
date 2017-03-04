@@ -18,6 +18,7 @@ public:
 	Sommet<T>* _debut; /**< The start-vertex's edge */
 	Sommet<T>* _fin; /**< The end-vertex's edge  */
 	S _v; /**< Generique class S instance*/
+	string _color;
 
 	/**
 	* Constructor <br />
@@ -26,7 +27,7 @@ public:
 	* @param fin The end-vertex's edge
 	* @param v The edge value
 	*/
-	Arete(int clef, Sommet<T>* debut, Sommet<T>* fin,const S& v) : GElement(clef), _debut(debut), _fin(fin), _v(v){
+	Arete(int clef, Sommet<T>* debut, Sommet<T>* fin,const S& v, const string &color = "black") : GElement(clef), _debut(debut), _fin(fin), _v(v),_color(color){
 		// Augmenter les degre des sommet
 		_debut->_degre++;
 		_fin->_degre++;
@@ -42,14 +43,17 @@ public:
 	* Converte edge to string
 	* @return A string represent string
 	*/
-	operator string() const { ostringstream oss; oss << "{" << _debut->_clef << "," << _fin->_clef << "}"; return oss.str(); }
+	operator string() const { 
+		ostringstream oss; 
+		oss << "{" << _debut->_v << "," << _fin->_v << "}{" << _debut << "," << _fin << "}";
+		return oss.str(); }
 	
 	/**
 	* Check if two edges are equals
 	* @param s1 The edge-to-compare vertex
 	* @param s2 The edge-to-compare vertex
 	*/
-	bool estEgal(const Sommet<T> *s1, const Sommet<T> * s2) const {	return ((_debut == s1 && _fin == s2) || (_debut == s2 && _fin == s1)); }
+	bool estEgal(const Sommet<T> *s1, const Sommet<T> * s2) const { return ((_debut == s1 && _fin == s2) || (_debut == s2 && _fin == s1)); }
 };
 /**
 * Use to print a edge

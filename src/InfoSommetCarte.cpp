@@ -6,7 +6,8 @@
 	*/
 InfoSommetCarte::operator std::string() const {
 	ostringstream oss;
-	oss << "nom = " << _nom << ", position = " << _position << endl;
+	//oss << "nom = " << _nom << ", position = " << _position << endl;
+	oss << _nom;
 	return oss.str();
 }
 

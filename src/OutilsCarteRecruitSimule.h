@@ -24,5 +24,5 @@ public:
 		Sommet<InfoSommetCarte>* sB,
 		Graphe<InfoAreteCarte, InfoSommetCarte>& graphe);
 
-	static Graphe<InfoAreteCarte,InfoSommetCarte> circuitEulerAlea(const Graphe<InfoAreteCarte, InfoSommetCarte> &g); 
+	static Graphe<InfoAreteCarte,InfoSommetCarte>* circuitEulerAlea(const Graphe<InfoAreteCarte, InfoSommetCarte> &g); 
 };

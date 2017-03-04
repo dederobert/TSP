@@ -7,7 +7,7 @@
 	*/
 InfoAreteCarte::operator std::string() const {
 	ostringstream oss;
-	oss << "coűt = " << _cout << endl;
+	oss << "cout = " << _cout << endl;
 	return oss.str();
 }
 

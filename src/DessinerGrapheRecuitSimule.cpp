@@ -30,7 +30,7 @@ void DessinerGrapheRecuitSimule::ecritAretes(ofstream& of, const Graphe<InfoAret
 
 	for (l = graphe._lArete; l; l = l->_s)
 	{
-		of << "couleur =  " << couleur << endl;
+		of << "couleur =  " << l->_v->_color << endl;
 		of << "nombre de points = 2" << endl;
 		of << l->_v->_debut->_v._position << endl;
 		of << l->_v->_fin->_v._position << endl;

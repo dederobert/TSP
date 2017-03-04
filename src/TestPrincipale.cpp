@@ -17,15 +17,58 @@ double fCout(const Graphe<InfoAreteCarte, InfoSommetCarte> &g) {
 		coutTotal += l->_v->_v._cout;
 	return coutTotal;
 }
-Graphe<InfoAreteCarte, InfoSommetCarte> changement(const Graphe<InfoAreteCarte, InfoSommetCarte> &g) {
-	return Graphe<InfoAreteCarte, InfoSommetCarte>();
+Graphe<InfoAreteCarte, InfoSommetCarte>* changement(Graphe<InfoAreteCarte, InfoSommetCarte>* g) {
+
+	Sommet<InfoSommetCarte> *A, *B, *C = NULL, *D = NULL;
+	int i = 0;
+	do{
+		PElement<Sommet<InfoSommetCarte>>* l = g->_lSommets;
+		for (int iA = rand() % g->nombreSommets(); iA >= 0; iA--) {
+			A = l->_v;
+			l = l->_s;
+		}
+		l = g->_lSommets;
+		for (int iB = rand() % g->nombreSommets(); iB >= 0; iB--) {
+			B = l->_v;
+			l = l->_s;
+		}
+		if (++i > (2 * g->nombreAretes())) throw Erreur("Failed to get A and B vertex");
+	} while (g->getAreteParSommets(A, B) || A == B);
+	
+	i = 0;
+	do {
+		if ((rand() % 2)) {
+			C = g->adjacences(A)->_v->first;
+			D = g->adjacences(B)->_v->first;
+		}else{
+			if (g->adjacences(A)->_s) C = g->adjacences(A)->_s->_v->first; else C = g->adjacences(A)->_v->first;
+			if (g->adjacences(B)->_s) D = g->adjacences(B)->_s->_v->first; else D = g->adjacences(B)->_v->first;
+		}
+		
+		if (++i > (2 * g->nombreAretes())) throw Erreur("Failed to change the circuit");
+	} while (C==D);
+
+	// Permuttation
+	Arete<InfoAreteCarte, InfoSommetCarte> *AC, *BD;
+	AC = g->getAreteParSommets(A, C);
+	BD = g->getAreteParSommets(B, D);
+	
+	g->check();
+
+	if (AC->_fin == C) AC->_fin = B; else AC->_debut = B;
+	g->check();
+	if (BD->_debut == B) BD->_debut = C; else BD->_fin = C;
+	g->check();
+
+	cout << "A " << *A << " B " << *B << " C " << *C << " D " << *D << endl;
+	return g;
 }
 double succ(const double &d) {
 	return d -1;
 }
 
-const double tInitiale = 10;
-const double tFinal = 100;
+const double tInitiale = 100;
+const double tFinal = 10;
 const int nbTentative = 100;
 const int nbSucces = 50;
 
@@ -53,59 +96,74 @@ int main() {
 	s5 = G->creerSommet(InfoSommetCarte("s5", Vector2D(1,3)));
 	
 	//Les Aretes
-	Arete<InfoAreteCarte,InfoSommetCarte>*** aretes = new Arete<InfoAreteCarte,InfoSommetCarte>**[6];
-	for (int i =0; i < 6; i++) {
-		aretes[i] = new Arete<InfoAreteCarte, InfoSommetCarte>*[6];
- 	}
-	aretes[0][1] = OutilsCarteRecuitSimule::creerArete(s0, s1, *G);
-	aretes[0][2] = OutilsCarteRecuitSimule::creerArete(s0, s2, *G);
-	aretes[0][3] = OutilsCarteRecuitSimule::creerArete(s0, s3, *G);
-	aretes[0][4] = OutilsCarteRecuitSimule::creerArete(s0, s4, *G);
-	aretes[0][5] = OutilsCarteRecuitSimule::creerArete(s0, s5, *G);
+	
+	OutilsCarteRecuitSimule::creerArete(s0, s1, *G);
+	OutilsCarteRecuitSimule::creerArete(s0, s2, *G);
+	OutilsCarteRecuitSimule::creerArete(s0, s3, *G);
+	OutilsCarteRecuitSimule::creerArete(s0, s4, *G);
+	OutilsCarteRecuitSimule::creerArete(s0, s5, *G);
 
-	aretes[1][2] = OutilsCarteRecuitSimule::creerArete(s1, s2, *G);
-	aretes[1][3] = OutilsCarteRecuitSimule::creerArete(s1, s3, *G);
-	aretes[1][4] = OutilsCarteRecuitSimule::creerArete(s1, s4, *G);
-	aretes[1][5] = OutilsCarteRecuitSimule::creerArete(s1, s5, *G);
+	OutilsCarteRecuitSimule::creerArete(s1, s2, *G);
+	OutilsCarteRecuitSimule::creerArete(s1, s3, *G);
+	OutilsCarteRecuitSimule::creerArete(s1, s4, *G);
+	OutilsCarteRecuitSimule::creerArete(s1, s5, *G);
 
-	aretes[2][3] = OutilsCarteRecuitSimule::creerArete(s2, s3, *G);
-	aretes[2][4] = OutilsCarteRecuitSimule::creerArete(s2, s4, *G);
-	aretes[2][5] = OutilsCarteRecuitSimule::creerArete(s2, s5, *G);
+	OutilsCarteRecuitSimule::creerArete(s2, s3, *G);
+	OutilsCarteRecuitSimule::creerArete(s2, s4, *G);
+	OutilsCarteRecuitSimule::creerArete(s2, s5, *G);
 
-	aretes[3][4] = OutilsCarteRecuitSimule::creerArete(s3, s4, *G);
-	aretes[3][5] = OutilsCarteRecuitSimule::creerArete(s3, s5, *G);
+	OutilsCarteRecuitSimule::creerArete(s3, s4, *G);
+	OutilsCarteRecuitSimule::creerArete(s3, s5, *G);
 
-	aretes[4][5] = OutilsCarteRecuitSimule::creerArete(s4, s5, *G);
+	OutilsCarteRecuitSimule::creerArete(s4, s5, *G);
 
 	/**************************************************\
 	*			MISE EN PLACE RECUIT SIMULE			   *
 	\**************************************************/
 
 	
-	/*Graphe<InfoAreteCarte, InfoSommetCarte> solutionInit;
-
-	Graphe<InfoAreteCarte, InfoSommetCarte> solution = 
-		recuitSimule<Graphe<InfoAreteCarte,InfoSommetCarte>>(tInitiale,
-		 tFinal, nbTentative, nbSucces, solutionInit, fCout, changement, succ);
-*/
-	Graphe<InfoAreteCarte, InfoSommetCarte> GEuler = OutilsCarteRecuitSimule::circuitEulerAlea(*G);
-
-
-	//Affichage du graphe
-	cout << *G << endl;
-
-	//Enregistrement dans un fichier
-	ofstream fichier("test.txt", ios::out | ios::trunc);
-	if (fichier){
-	 	DessinerGrapheRecuitSimule::ecritGraphe(fichier,*G, Vector2D(0,5), Vector2D(5,0), "black", 10, "red", "black");
-		fichier.close();
-	}else
-		cerr << "Impossible d'ouvrir le fichier " << endl;
-
-	ofstream fichier2("Euler.txt", ios::out | ios::trunc);
+	
+	Graphe<InfoAreteCarte, InfoSommetCarte>* solutionInit = OutilsCarteRecuitSimule::circuitEulerAlea(*G);
+	ofstream fichier2("../../bsplines/Euler.txt", ios::out | ios::trunc);
 	if (fichier2){
-		DessinerGrapheRecuitSimule::ecritGraphe(fichier2,GEuler, Vector2D(0,5),Vector2D(5,0),"black",10,"red","black");
+		DessinerGrapheRecuitSimule::ecritGraphe(fichier2, *solutionInit, Vector2D(0, 5),
+			Vector2D(5, 0), "black", 5, "black", "black");
 		fichier2.close();
 	}
+	Graphe<InfoAreteCarte, InfoSommetCarte>* solution;
+	try {
+		solution =
+			recuitSimule<Graphe<InfoAreteCarte, InfoSommetCarte>>(tInitiale,
+			tFinal, nbTentative, nbSucces, solutionInit, fCout, changement, succ);
+	}catch(Erreur e) {
+		cerr << e.trace();
+		system("PAUSE");
+		return e.getCode();
+	}
+	
+	/*
+	try {
+		for (int i = 0; i < 10; i++)
+			solution = changement(solutionInit);
+	}
+	catch (Erreur e) {
+		cerr << e.trace();
+		system("PAUSE");
+		return e.getCode();
+	}*/
+	G->colorierChemin(*solution);
+
+	
+	//Enregistrement dans un fichier
+
+	
+
+	ofstream fichier3("../../bsplines/Solution.txt", ios::out | ios::trunc);
+	if (fichier3){
+		DessinerGrapheRecuitSimule::ecritGraphe(fichier3, *G, Vector2D(0, 5),
+			Vector2D(5, 0), "black", 5, "black", "black");
+		fichier3.close();
+	}
+	
 	system("PAUSE");
 }

@@ -1,5 +1,7 @@
 #pragma once
 #include <time.h>
+#include <cstdlib>
+#include <iostream>
 #include "Vector2D.h"
 #include "OutilsCarteRecruitSimule.h"
 #include "AlgebreLineaire.h"
@@ -13,36 +15,40 @@ Arete<InfoAreteCarte, InfoSommetCarte>* OutilsCarteRecuitSimule::creerArete(Somm
 }
 
 int alea(int bs) {
-	srand(time(NULL));
-	return rand() % bs;
+	return (rand() % bs);
 }
 
-Graphe<InfoAreteCarte,InfoSommetCarte> OutilsCarteRecuitSimule::circuitEulerAlea(const Graphe<InfoAreteCarte, InfoSommetCarte> &g) {
-	Graphe<InfoAreteCarte, InfoSommetCarte> ret;
+Graphe<InfoAreteCarte,InfoSommetCarte>* OutilsCarteRecuitSimule::circuitEulerAlea(const Graphe<InfoAreteCarte, InfoSommetCarte> &g) {
+	srand(time(NULL));
+	Graphe<InfoAreteCarte, InfoSommetCarte>* ret = new Graphe<InfoAreteCarte,InfoSommetCarte>();
 	Sommet<InfoSommetCarte>** sommets = new Sommet<InfoSommetCarte>*[g.nombreSommets()];
 	int* entiers = new int[g.nombreSommets()+1];
-	int i = 0;
 	
-	for (PElement<Sommet<InfoSommetCarte>>* l = g._lSommets; l->_s;l=l->_s){
-		ret.creerSommet(l->_v->_v);
+	PElement<Sommet<InfoSommetCarte>>* l = g._lSommets;
+
+	for (int i = 0; i < g.nombreSommets(); i++){
+		ret->_lSommets = new PElement<Sommet<InfoSommetCarte>>(l->_v, ret->_lSommets);
 		sommets[i] = l->_v;
 		entiers[i] = i;
-		cout << "i = " << i << endl;
-		i++;
+		l = l->_s;
 	}
-	/*
+	
 	for (int k = 0; k < g.nombreSommets(); k++) {
-		int alea1 = alea(g.nombreSommets()), alea2 = alea(g.nombreSommets());
+		int alea1 = alea(g.nombreSommets());
+		int alea2 = alea(g.nombreSommets());
 		int tmp = entiers[alea1];
 		entiers[alea1] = entiers[alea2];
 		entiers[alea2] = tmp;
 	}
-	*/
+	
 	entiers[g.nombreSommets()] = entiers[0];
 	
 
-	for (int j = 0; j < (g.nombreSommets() +1) ; j++)
-		OutilsCarteRecuitSimule::creerArete(sommets[entiers[j]], sommets[entiers[j]], ret);
+	for (int j = 0; j < g.nombreSommets(); j++) {
+		OutilsCarteRecuitSimule::creerArete(sommets[entiers[j]], sommets[entiers[j+1]], *ret);
+	}
+	delete[] entiers;
+	delete[] sommets;
 	return ret;
 }
 

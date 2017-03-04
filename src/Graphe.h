@@ -36,6 +36,7 @@ public:
 	}
 
 	Arete<S, T>* getAreteParSommets(const Sommet<T>* s1, const Sommet<T>* s2) const {
+		//cout << " s1 = " << *s1 << " s2 = " << *s2 << endl;
 		for (PElement<Arete<S, T>>* tmp = _lArete; tmp; tmp = tmp->_s){
 			if (tmp->_v->estEgal(s1, s2))
 				return tmp->_v;
@@ -47,6 +48,7 @@ public:
 	PElement<pair<Sommet<T>*, Arete<S, T>*>>* adjacences(const Sommet<T>* sommet) const {
 		PElement<pair<Sommet<T>*, Arete<S, T>*>>* xd = NULL;
 		for (PElement<Sommet<T>>* tmp = _lSommets; tmp; tmp = tmp->_s) {
+			
 			if (tmp->_v != sommet){
 				Arete<S,T>* a = getAreteParSommets(tmp->_v, sommet);
 				if (a != NULL)
@@ -54,6 +56,29 @@ public:
 			}
 		}
 		return xd;
+	}
+
+	void check() const {
+		cout << endl << endl << endl << "CHECK BEGIN" << endl;
+		for (PElement<Sommet<T>>* tmp = _lSommets; tmp; tmp = tmp->_s) {
+			cout << "Sommet = " << *tmp->_v << "@" << tmp->_v << endl;
+		}
+		for (PElement<Arete<S, T>>* tmp = _lArete; tmp; tmp = tmp->_s) {
+			cout << "Arrete = " << *tmp->_v << endl;
+		}
+
+		cout << endl << "CHECK END" << endl << endl << endl;
+	}
+
+	void colorierChemin(const Graphe<S, T> &g) {
+		PElement<Arete<S, T>>* aretes = g._lArete;
+		if (aretes) {
+			Arete<InfoAreteCarte, InfoSommetCarte>* tmp;
+			for (; aretes; aretes = aretes->_s) {
+				if ((tmp = this->getAreteParSommets(aretes->_v->_debut, aretes->_v->_fin)) != NULL)
+					tmp->_color = "red";
+			}
+		}
 	}
 
 	operator string() const { ostringstream oss; oss << "Graphe sommets " << _lSommets << ", aretes " << _lArete; return oss.str(); }
