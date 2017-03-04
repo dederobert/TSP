@@ -49,16 +49,32 @@ Graphe<InfoAreteCarte, InfoSommetCarte>* changement(Graphe<InfoAreteCarte, InfoS
 	} while (C==D);
 
 	// Permuttation
-	Arete<InfoAreteCarte, InfoSommetCarte> *AC, *BD;
-	AC = g->getAreteParSommets(A, C);
-	BD = g->getAreteParSommets(B, D);
+	Arete<InfoAreteCarte, InfoSommetCarte> *AR1, *AR2;
+	AR1 = g->getAreteParSommets(A, C);
+	AR2 = g->getAreteParSommets(B, D);
 	
+	//g->check();
+	
+	if (AR1->_debut == A && AR2->_debut == B) {
+		AR1->_fin = B;
+		AR2->_debut = C;
+	}else if (AR1->_debut == C && AR2->_debut == B) {
+		AR1->_debut = D;
+		AR2->_fin = C;
+	}else if (AR1->_debut == C && AR2->_debut == D) {
+		AR1->_debut = B;
+		AR2->_fin = C;
+	}else {
+		AR1->_fin = D;
+		AR2->_debut = C;
+	}
+	/*
+	if (AR1->_fin == C) AR1->_fin = B; else AR1->_debut = B;
 	g->check();
+	if (AR2->_debut == B) AR2->_debut = C; else AR2->_fin = C;
+	g->check();*/
 
-	if (AC->_fin == C) AC->_fin = B; else AC->_debut = B;
-	g->check();
-	if (BD->_debut == B) BD->_debut = C; else BD->_fin = C;
-	g->check();
+	
 
 	cout << "A " << *A << " B " << *B << " C " << *C << " D " << *D << endl;
 	return g;
