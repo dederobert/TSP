@@ -8,6 +8,7 @@
 #include "OutilsCarteRecruitSimule.h"
 #include "Vector2D.h"
 #include "recuitSimule.h"
+#include "tsp.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ double fCout(const Graphe<InfoAreteCarte, InfoSommetCarte> &g) {
 	for (PElement<Arete<InfoAreteCarte,InfoSommetCarte>>* l = g._lArete; l=l->_s;)
 		coutTotal += l->_v->_v._cout;
 	return coutTotal;
-}
+}/*
 Graphe<InfoAreteCarte, InfoSommetCarte>* changement(Graphe<InfoAreteCarte, InfoSommetCarte>* g) {
 
 	Sommet<InfoSommetCarte> *A, *B, *C = NULL, *D = NULL;
@@ -74,10 +75,10 @@ Graphe<InfoAreteCarte, InfoSommetCarte>* changement(Graphe<InfoAreteCarte, InfoS
 			Vector2D(5, 0), "black", 5, "black", "black");
 		fichier3.close();
 	}
-	system("PAUSE");*/
+	system("PAUSE");*
 	AR2->_debut = C;
 	return g;
-}
+}*/
 double succ(const double &d) {
 	return d -1;
 }

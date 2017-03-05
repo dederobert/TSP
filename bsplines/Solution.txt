@@ -27,7 +27,7 @@ couleur =  red
 nombre de points = 2
 ( 5, 3)
 ( 3, 4)
-couleur =  black
+couleur =  red
 nombre de points = 2
 ( 5, 2)
 ( 1, 3)
@@ -47,7 +47,7 @@ couleur =  black
 nombre de points = 2
 ( 3, 1)
 ( 3, 4)
-couleur =  red
+couleur =  black
 nombre de points = 2
 ( 3, 1)
 ( 5, 3)
@@ -55,7 +55,7 @@ couleur =  red
 nombre de points = 2
 ( 3, 1)
 ( 5, 2)
-couleur =  red
+couleur =  black
 nombre de points = 2
 ( 1, 2)
 ( 1, 3)
@@ -63,15 +63,15 @@ couleur =  black
 nombre de points = 2
 ( 1, 2)
 ( 3, 4)
-couleur =  black
-nombre de points = 2
-( 1, 2)
-( 5, 3)
 couleur =  red
 nombre de points = 2
 ( 1, 2)
-( 5, 2)
+( 5, 3)
 couleur =  black
+nombre de points = 2
+( 1, 2)
+( 5, 2)
+couleur =  red
 nombre de points = 2
 ( 1, 2)
 ( 3, 1)
