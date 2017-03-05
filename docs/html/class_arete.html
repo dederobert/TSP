@@ -82,8 +82,8 @@ Inheritance diagram for Arete&lt; S, T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a63c0f1125180ad677d2ff3114be1057c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arete.html#a63c0f1125180ad677d2ff3114be1057c">Arete</a> (int clef, <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *debut, <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *fin, const S &amp;v)</td></tr>
-<tr class="separator:a63c0f1125180ad677d2ff3114be1057c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4401d9f685aa368cb5aa25f4ef3b4bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arete.html#ae4401d9f685aa368cb5aa25f4ef3b4bc">Arete</a> (int clef, <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *debut, <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *fin, const S &amp;v, const string &amp;color=&quot;black&quot;)</td></tr>
+<tr class="separator:ae4401d9f685aa368cb5aa25f4ef3b4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9a4a2b2b2f964c90c1a39830bffe0cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arete.html#ad9a4a2b2b2f964c90c1a39830bffe0cc">~Arete</a> ()</td></tr>
 <tr class="separator:ad9a4a2b2b2f964c90c1a39830bffe0cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24af5d8dc9699c6ef2cae5822b255852"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arete.html#a24af5d8dc9699c6ef2cae5822b255852">operator string</a> () const</td></tr>
@@ -106,6 +106,9 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a0f95b87e6a56282e3b352ac3ea375f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71173e18c24fa75975d9a7f0233e6011"><td class="memItemLeft" align="right" valign="top">S&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_arete.html#a71173e18c24fa75975d9a7f0233e6011">_v</a></td></tr>
 <tr class="separator:a71173e18c24fa75975d9a7f0233e6011"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae57fefc60a7b8f09538625b31360906d"><td class="memItemLeft" align="right" valign="top"><a id="ae57fefc60a7b8f09538625b31360906d"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>_color</b></td></tr>
+<tr class="separator:ae57fefc60a7b8f09538625b31360906d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_g_element"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_g_element')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_g_element.html">GElement</a></td></tr>
 <tr class="memitem:a81fddc1c843b2e85d40a16dd7eb115f2 inherit pub_attribs_class_g_element"><td class="memItemLeft" align="right" valign="top"><a id="a81fddc1c843b2e85d40a16dd7eb115f2"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>_clef</b></td></tr>
@@ -118,8 +121,8 @@ class Arete&lt; S, T &gt;</h3>
 <p>Represent a edge in graphe <br />
  A edge is two vertices pointer and a value </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a63c0f1125180ad677d2ff3114be1057c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63c0f1125180ad677d2ff3114be1057c">&#9670;&nbsp;</a></span>Arete()</h2>
+<a id="ae4401d9f685aa368cb5aa25f4ef3b4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4401d9f685aa368cb5aa25f4ef3b4bc">&#9670;&nbsp;</a></span>Arete()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -151,7 +154,13 @@ template&lt;typename S, typename T&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const S &amp;&#160;</td>
-          <td class="paramname"><em>v</em>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;&#160;</td>
+          <td class="paramname"><em>color</em> = <code>&quot;black&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>

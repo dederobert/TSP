@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['taille',['taille',['../class_p_element.html#a28d306c4b72323e7f092e1fb868556d4',1,'PElement']]],
-  ['tostring',['toString',['../class_p_element.html#a54aaff4c286ae9a8b5070f294f2dd0b4',1,'PElement']]]
+  ['operator_20string',['operator string',['../class_arete.html#a24af5d8dc9699c6ef2cae5822b255852',1,'Arete::operator string()'],['../class_info_arete_carte.html#a2417d6e197e7c371d1fc52e6b484d052',1,'InfoAreteCarte::operator string()']]],
+  ['operator_2d',['operator-',['../class_vector2_d.html#a03bb71dddee9f2d265410b932711b9a4',1,'Vector2D']]]
 ];

@@ -62,11 +62,14 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="class_graphe-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Graphe&lt; S, T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_graphe_8h_source.html">Graphe.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -88,11 +91,40 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>nombreAretes</b> () co
 <tr class="memitem:aeab6603f4060ad9e0b1179eef6c6b17a"><td class="memItemLeft" align="right" valign="top"><a id="aeab6603f4060ad9e0b1179eef6c6b17a"></a>
 <a class="el" href="class_p_element.html">PElement</a>&lt; pair&lt; <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *, <a class="el" href="class_arete.html">Arete</a>&lt; S, T &gt; * &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>adjacences</b> (const <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *sommet) const</td></tr>
 <tr class="separator:aeab6603f4060ad9e0b1179eef6c6b17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15241495d1c4aa013a670a6f74c6c65"><td class="memItemLeft" align="right" valign="top"><a id="ac15241495d1c4aa013a670a6f74c6c65"></a>
+<a class="el" href="class_p_element.html">PElement</a>&lt; <a class="el" href="class_arete.html">Arete</a>&lt; S, T &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>cheminFromTo</b> (const <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *from, const <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *to) const</td></tr>
+<tr class="separator:ac15241495d1c4aa013a670a6f74c6c65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbf93860a11e53b8c42717cb4dfd1045"><td class="memItemLeft" align="right" valign="top"><a id="afbf93860a11e53b8c42717cb4dfd1045"></a>
+<a class="el" href="class_p_element.html">PElement</a>&lt; <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>successeur</b> (const <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; *sommet) const</td></tr>
+<tr class="separator:afbf93860a11e53b8c42717cb4dfd1045"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cb5b51d38716c0aff95d08bcbe6e1c1"><td class="memItemLeft" align="right" valign="top"><a id="a3cb5b51d38716c0aff95d08bcbe6e1c1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>check</b> () const</td></tr>
+<tr class="separator:a3cb5b51d38716c0aff95d08bcbe6e1c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab95b4a0c72ef9172fdad38d20111dd81"><td class="memItemLeft" align="right" valign="top"><a id="ab95b4a0c72ef9172fdad38d20111dd81"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>colorierChemin</b> (const <a class="el" href="class_graphe.html">Graphe</a>&lt; S, T &gt; &amp;g)</td></tr>
+<tr class="separator:ab95b4a0c72ef9172fdad38d20111dd81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5514e44c366ae9c01320ae1ee10e63e"><td class="memItemLeft" align="right" valign="top"><a id="ae5514e44c366ae9c01320ae1ee10e63e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>operator string</b> () const</td></tr>
 <tr class="separator:ae5514e44c366ae9c01320ae1ee10e63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a18585eab926c00d0438111458cc17786"><td class="memItemLeft" align="right" valign="top"><a id="a18585eab926c00d0438111458cc17786"></a>
+<a class="el" href="class_p_element.html">PElement</a>&lt; <a class="el" href="class_sommet.html">Sommet</a>&lt; T &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_lSommets</b></td></tr>
+<tr class="separator:a18585eab926c00d0438111458cc17786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3ca5e7a64878bb595d61b0d2745a6f5"><td class="memItemLeft" align="right" valign="top"><a id="ab3ca5e7a64878bb595d61b0d2745a6f5"></a>
+<a class="el" href="class_p_element.html">PElement</a>&lt; <a class="el" href="class_arete.html">Arete</a>&lt; S, T &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_lArete</b></td></tr>
+<tr class="separator:ab3ca5e7a64878bb595d61b0d2745a6f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ddb7633ef00796473f225b2236fd5cf"><td class="memItemLeft" align="right" valign="top"><a id="a4ddb7633ef00796473f225b2236fd5cf"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>_prochaineClef</b></td></tr>
+<tr class="separator:a4ddb7633ef00796473f225b2236fd5cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;class S, class T&gt;<br />
+class Graphe&lt; S, T &gt;</h3>
+
+<p>Représente un graphe </p>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="_graphe_8h_source.html">Graphe.h</a></li>
 </ul>
 </div><!-- contents -->

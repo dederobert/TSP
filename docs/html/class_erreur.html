@@ -67,25 +67,181 @@ $(function() {
 <div class="title">Erreur Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_erreur_8h_source.html">Erreur.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a77d24860153f9657f2141efcf08528ab"><td class="memItemLeft" align="right" valign="top"><a id="a77d24860153f9657f2141efcf08528ab"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Erreur</b> (const std::string message, const int code=0, <a class="el" href="class_erreur.html">Erreur</a> *parent=NULL)</td></tr>
+<tr class="memitem:a77d24860153f9657f2141efcf08528ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_erreur.html#a77d24860153f9657f2141efcf08528ab">Erreur</a> (const std::string message, const int code=0, <a class="el" href="class_erreur.html">Erreur</a> *parent=NULL)</td></tr>
 <tr class="separator:a77d24860153f9657f2141efcf08528ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e4986b41b60dbd66189313f21d017fa"><td class="memItemLeft" align="right" valign="top"><a id="a6e4986b41b60dbd66189313f21d017fa"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getMessage</b> () const</td></tr>
+<tr class="memitem:a6e4986b41b60dbd66189313f21d017fa"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_erreur.html#a6e4986b41b60dbd66189313f21d017fa">getMessage</a> () const</td></tr>
 <tr class="separator:a6e4986b41b60dbd66189313f21d017fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7ad60152537c4e948e8b3fc3f4d7543"><td class="memItemLeft" align="right" valign="top"><a id="ab7ad60152537c4e948e8b3fc3f4d7543"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><b>getCode</b> () const</td></tr>
+<tr class="memitem:ab7ad60152537c4e948e8b3fc3f4d7543"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_erreur.html#ab7ad60152537c4e948e8b3fc3f4d7543">getCode</a> () const</td></tr>
 <tr class="separator:ab7ad60152537c4e948e8b3fc3f4d7543"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79b18f6dbaeb7312013a10f5dfcda79a"><td class="memItemLeft" align="right" valign="top"><a id="a79b18f6dbaeb7312013a10f5dfcda79a"></a>
-const <a class="el" href="class_erreur.html">Erreur</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getParent</b> () const</td></tr>
+<tr class="memitem:a79b18f6dbaeb7312013a10f5dfcda79a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_erreur.html">Erreur</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_erreur.html#a79b18f6dbaeb7312013a10f5dfcda79a">getParent</a> () const</td></tr>
 <tr class="separator:a79b18f6dbaeb7312013a10f5dfcda79a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ea6bc46a9e37081709e86e476d46101"><td class="memItemLeft" align="right" valign="top"><a id="a6ea6bc46a9e37081709e86e476d46101"></a>
-const std::string&#160;</td><td class="memItemRight" valign="bottom"><b>trace</b> () const</td></tr>
-<tr class="separator:a6ea6bc46a9e37081709e86e476d46101"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a860d378aa99e6bec44afc5d784e0621a"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_erreur.html#a860d378aa99e6bec44afc5d784e0621a">trace</a> () const</td></tr>
+<tr class="separator:a860d378aa99e6bec44afc5d784e0621a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class pour la gestion des erreurs </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a77d24860153f9657f2141efcf08528ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77d24860153f9657f2141efcf08528ab">&#9670;&nbsp;</a></span>Erreur()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Erreur::Erreur </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>code</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_erreur.html">Erreur</a> *&#160;</td>
+          <td class="paramname"><em>parent</em> = <code>NULL</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructeur <br />
+ Construit une erreur avec un message, un code et un parent </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Message de l'erreur </td></tr>
+    <tr><td class="paramname">code</td><td>Code de l'erreur <em>Optionel</em> </td></tr>
+    <tr><td class="paramname">parent</td><td>Parent de l'erreur <em>Optionel</em> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab7ad60152537c4e948e8b3fc3f4d7543"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7ad60152537c4e948e8b3fc3f4d7543">&#9670;&nbsp;</a></span>getCode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int Erreur::getCode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retourne le code de l'erreur </p><dl class="section return"><dt>Returns</dt><dd>Code de l'erreur </dd></dl>
+
+</div>
+</div>
+<a id="a6e4986b41b60dbd66189313f21d017fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e4986b41b60dbd66189313f21d017fa">&#9670;&nbsp;</a></span>getMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string Erreur::getMessage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retourne le message de l'erreur </p><dl class="section return"><dt>Returns</dt><dd>Message de l'erreur </dd></dl>
+
+</div>
+</div>
+<a id="a79b18f6dbaeb7312013a10f5dfcda79a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79b18f6dbaeb7312013a10f5dfcda79a">&#9670;&nbsp;</a></span>getParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="class_erreur.html">Erreur</a>* Erreur::getParent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retourne le parent de l'erreur </p><dl class="section return"><dt>Returns</dt><dd>Parent de l'erreur </dd></dl>
+
+</div>
+</div>
+<a id="a860d378aa99e6bec44afc5d784e0621a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a860d378aa99e6bec44afc5d784e0621a">&#9670;&nbsp;</a></span>trace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">_parent <a class="el" href="class_erreur.html">Erreur</a> parente dans la Erreur::trace </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Permet d'otenir le trace de l'erreur </p><dl class="section return"><dt>Returns</dt><dd>Trace des erreurs </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="_erreur_8h_source.html">Erreur.h</a></li>
 </ul>

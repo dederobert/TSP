@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_20string',['operator string',['../class_arete.html#a24af5d8dc9699c6ef2cae5822b255852',1,'Arete']]]
+  ['hassucc',['hasSucc',['../class_p_element.html#ad8cb634f02c114121f4f34c452e39e55',1,'PElement']]]
 ];

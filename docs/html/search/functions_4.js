@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['insertionordonnee',['insertionOrdonnee',['../class_p_element.html#afaf5cca7771b4796bf48952c3a759997',1,'PElement']]]
+  ['getcode',['getCode',['../class_erreur.html#ab7ad60152537c4e948e8b3fc3f4d7543',1,'Erreur']]],
+  ['getmessage',['getMessage',['../class_erreur.html#a6e4986b41b60dbd66189313f21d017fa',1,'Erreur']]],
+  ['getparent',['getParent',['../class_erreur.html#a79b18f6dbaeb7312013a10f5dfcda79a',1,'Erreur']]]
 ];

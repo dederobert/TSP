@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['erreur',['Erreur',['../class_erreur.html',1,'']]]
+  ['dessinergrapherecuitsimule',['DessinerGrapheRecuitSimule',['../class_dessiner_graphe_recuit_simule.html',1,'']]],
+  ['dessingraphe',['DessinGraphe',['../class_dessin_graphe.html',1,'']]]
 ];
