@@ -4,6 +4,9 @@
 #include "Sommet.h"
 #include <sstream>
 
+/**
+* Représente un graphe
+*/
 template<class S, class T>
 class Graphe{
 public:

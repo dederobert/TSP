@@ -4,6 +4,9 @@
 #include <sstream>
 using namespace std;
 
+/**
+* Class generique pour les elements d'un graphe
+*/
 class GElement{
 public:
 	int _clef;
